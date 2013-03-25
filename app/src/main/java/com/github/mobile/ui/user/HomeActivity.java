@@ -19,6 +19,7 @@ import static com.actionbarsherlock.app.ActionBar.NAVIGATION_MODE_LIST;
 import static com.github.mobile.ui.user.HomeDropdownListAdapter.ACTION_BOOKMARKS;
 import static com.github.mobile.ui.user.HomeDropdownListAdapter.ACTION_DASHBOARD;
 import static com.github.mobile.ui.user.HomeDropdownListAdapter.ACTION_GISTS;
+import static com.github.mobile.ui.user.HomeDropdownListAdapter.ACTION_NOTIFICATIONS;
 import static com.github.mobile.util.TypefaceUtils.ICON_FOLLOW;
 import static com.github.mobile.util.TypefaceUtils.ICON_NEWS;
 import static com.github.mobile.util.TypefaceUtils.ICON_PUBLIC;
@@ -46,6 +47,7 @@ import com.github.mobile.ui.TabPagerActivity;
 import com.github.mobile.ui.gist.GistsActivity;
 import com.github.mobile.ui.issue.FiltersViewActivity;
 import com.github.mobile.ui.issue.IssueDashboardActivity;
+import com.github.mobile.ui.notification.NotificationsViewActivity;
 import com.github.mobile.ui.repo.OrganizationLoader;
 import com.github.mobile.util.AvatarLoader;
 import com.github.mobile.util.PreferenceUtils;
@@ -225,7 +227,10 @@ public class HomeActivity extends TabPagerActivity<HomePagerAdapter> implements
                 startActivity(new Intent(this, IssueDashboardActivity.class));
                 break;
             case ACTION_BOOKMARKS:
-                startActivity(FiltersViewActivity.createIntent());
+//                startActivity(FiltersViewActivity.createIntent());
+                startActivity(new Intent(this, NotificationsViewActivity.class));
+                break;
+                case ACTION_NOTIFICATIONS:
                 break;
             }
             int orgSelected = homeAdapter.getSelected();
