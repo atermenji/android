@@ -15,6 +15,7 @@
  */
 package com.github.mobile;
 
+import com.github.mobile.core.notification.NotificationService;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 
@@ -125,5 +126,10 @@ public class ServicesModule extends AbstractModule {
     @Provides
     ContentsService contentsService(GitHubClient client) {
         return new ContentsService(client);
+    }
+
+    @Provides
+    NotificationService notificationService(GitHubClient client) {
+        return new NotificationService(client);
     }
 }
