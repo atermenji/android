@@ -26,9 +26,11 @@ import android.os.Bundle;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
 import android.support.v4.content.Loader;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
@@ -57,6 +59,8 @@ import org.eclipse.egit.github.core.Blob;
 import org.eclipse.egit.github.core.IRepositoryIdProvider;
 import org.eclipse.egit.github.core.Repository;
 import org.eclipse.egit.github.core.util.EncodingUtils;
+
+import in.uncod.android.bypass.Bypass;
 
 /**
  * Activity to view a file on a branch
@@ -123,6 +127,8 @@ public class BranchFileViewActivity extends BaseActivity implements
 
     private WebView codeView;
 
+    private TextView markdownView;
+
     private SourceEditor editor;
 
     private MenuItem markdownItem;
@@ -146,6 +152,7 @@ public class BranchFileViewActivity extends BaseActivity implements
 
         loadingBar = finder.find(id.pb_loading);
         codeView = finder.find(id.wv_code);
+        markdownView = finder.find(id.tv_markdown);
 
         file = CommitUtils.getName(path);
         isMarkdownFile = isMarkdown(file);
@@ -288,9 +295,18 @@ public class BranchFileViewActivity extends BaseActivity implements
                 if (isMarkdownFile
                         && PreferenceUtils.getCodePreferences(
                                 BranchFileViewActivity.this).getBoolean(
-                                RENDER_MARKDOWN, true))
-                    loadMarkdown();
-                else {
+                                RENDER_MARKDOWN, true)) {
+                    ViewUtils.setGone(loadingBar, true);
+                    ViewUtils.setGone(markdownView, false);
+
+                    Bypass bypass = new Bypass();
+                    String markdown = new String(EncodingUtils.fromBase64(blob.getContent()));
+                    CharSequence markdownParsed = bypass.markdownToSpannable(markdown);
+                    markdownView.setText(markdownParsed);
+                    markdownView.setMovementMethod(LinkMovementMethod.getInstance());
+
+//                    loadMarkdown();
+                } else {
                     ViewUtils.setGone(loadingBar, true);
                     ViewUtils.setGone(codeView, false);
 
