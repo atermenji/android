@@ -15,21 +15,23 @@
  */
 package com.github.mobile.sync;
 
+import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
 
 import roboguice.inject.ContextScopedProvider;
-import roboguice.service.RoboService;
 
 /**
  * Sync adapter service
  */
-public class SyncAdapterService extends RoboService {
+public class SyncAdapterService extends Service {
 
     @Inject
     private ContextScopedProvider<SyncAdapter> syncAdapterProvider;
+
+    // TODO inject this from on create
 
     @Override
     public IBinder onBind(Intent intent) {

@@ -20,8 +20,8 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.github.mobile.DefaultClient;
-import com.google.inject.Provider;
 
+import javax.inject.Provider;
 import java.net.HttpURLConnection;
 
 import org.eclipse.egit.github.core.client.GitHubClient;

@@ -18,8 +18,9 @@ package com.github.mobile.ui;
 import static com.actionbarsherlock.view.Window.FEATURE_INDETERMINATE_PROGRESS;
 import android.os.Bundle;
 
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.github.kevinsawicki.wishlist.ViewFinder;
-import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmentActivity;
+import com.github.mobile.GitHubApplication;
 
 import java.io.Serializable;
 
@@ -27,7 +28,7 @@ import java.io.Serializable;
  * Activity that display dialogs
  */
 public abstract class DialogFragmentActivity extends
-        RoboSherlockFragmentActivity implements DialogResultListener {
+        SherlockFragmentActivity implements DialogResultListener {
 
     /**
      * Finder bound to this activity's view
@@ -41,6 +42,8 @@ public abstract class DialogFragmentActivity extends
         super.onCreate(savedInstanceState);
 
         finder = new ViewFinder(this);
+
+        GitHubApplication.from(this).inject(this);
     }
 
     /**

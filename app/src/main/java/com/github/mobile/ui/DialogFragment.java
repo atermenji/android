@@ -19,15 +19,16 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.actionbarsherlock.app.SherlockFragment;
 import com.github.kevinsawicki.wishlist.ViewFinder;
-import com.github.rtyley.android.sherlock.roboguice.fragment.RoboSherlockFragment;
+import com.github.mobile.GitHubApplication;
 
 import java.io.Serializable;
 
 /**
  * Base fragment capable of receiving dialog callbacks
  */
-public abstract class DialogFragment extends RoboSherlockFragment implements
+public abstract class DialogFragment extends SherlockFragment implements
         DialogResultListener {
 
     /**
@@ -77,6 +78,13 @@ public abstract class DialogFragment extends RoboSherlockFragment implements
             return activity.getIntent().getStringExtra(name);
         else
             return null;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        GitHubApplication.from(getActivity()).inject(this);
     }
 
     @Override

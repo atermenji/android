@@ -33,8 +33,8 @@ import com.github.kevinsawicki.http.HttpRequest;
 import com.github.mobile.R.drawable;
 import com.github.mobile.R.id;
 import com.github.mobile.core.search.SearchUser;
-import com.google.inject.Inject;
 
+import javax.inject.Inject;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;

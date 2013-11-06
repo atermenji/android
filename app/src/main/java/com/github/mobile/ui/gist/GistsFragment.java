@@ -29,8 +29,8 @@ import com.github.mobile.R.string;
 import com.github.mobile.core.gist.GistStore;
 import com.github.mobile.ui.PagedItemFragment;
 import com.github.mobile.util.AvatarLoader;
-import com.google.inject.Inject;
 
+import javax.inject.Inject;
 import java.util.List;
 
 import org.eclipse.egit.github.core.Gist;

@@ -40,6 +40,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.github.kevinsawicki.wishlist.ViewFinder;
@@ -49,7 +50,6 @@ import com.github.mobile.R.menu;
 import com.github.mobile.R.string;
 import com.github.mobile.ui.LightProgressDialog;
 import com.github.mobile.ui.TextWatcherAdapter;
-import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockActivity;
 
 import java.io.IOException;
 
@@ -62,7 +62,7 @@ import roboguice.util.RoboAsyncTask;
 /**
  * Activity to enter two-factor authentication OTP code
  */
-public class TwoFactorAuthActivity extends RoboSherlockActivity {
+public class TwoFactorAuthActivity extends SherlockActivity {
 
     /**
      * Create intent to enter two-factor authentication code

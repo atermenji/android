@@ -25,7 +25,8 @@ import android.os.Bundle;
 
 import com.github.mobile.accounts.AccountScope;
 import com.github.mobile.sync.SyncCampaign.Factory;
-import com.google.inject.Inject;
+
+import javax.inject.Inject;
 
 import roboguice.inject.ContextScope;
 import roboguice.inject.ContextSingleton;

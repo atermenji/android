@@ -20,8 +20,7 @@ import android.accounts.AccountManager;
 import android.app.Activity;
 import android.content.Context;
 
-import com.google.inject.Inject;
-
+import javax.inject.Inject;
 import java.io.IOException;
 import java.util.concurrent.Executor;
 

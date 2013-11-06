@@ -27,8 +27,8 @@ import com.github.mobile.core.ResourcePager;
 import com.github.mobile.core.issue.IssueStore;
 import com.github.mobile.ui.PagedItemFragment;
 import com.github.mobile.util.AvatarLoader;
-import com.google.inject.Inject;
 
+import javax.inject.Inject;
 import java.util.List;
 import java.util.Map;
 

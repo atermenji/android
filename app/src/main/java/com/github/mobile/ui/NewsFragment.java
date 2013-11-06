@@ -46,8 +46,8 @@ import com.github.mobile.ui.issue.IssuesViewActivity;
 import com.github.mobile.ui.repo.RepositoryViewActivity;
 import com.github.mobile.ui.user.NewsListAdapter;
 import com.github.mobile.util.AvatarLoader;
-import com.google.inject.Inject;
 
+import javax.inject.Inject;
 import java.util.List;
 
 import org.eclipse.egit.github.core.Commit;

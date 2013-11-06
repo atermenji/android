@@ -51,7 +51,7 @@ import com.github.mobile.util.PreferenceUtils;
 import com.github.mobile.util.ShareUtils;
 import com.github.mobile.util.SourceEditor;
 import com.github.mobile.util.ToastUtils;
-import com.google.inject.Inject;
+import javax.inject.Inject;
 
 import java.io.Serializable;
 

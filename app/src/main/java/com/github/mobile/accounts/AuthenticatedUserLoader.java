@@ -22,8 +22,8 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.github.kevinsawicki.wishlist.AsyncLoader;
-import com.google.inject.Inject;
 
+import javax.inject.Inject;
 import java.io.IOException;
 
 import roboguice.RoboGuice;

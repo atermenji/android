@@ -71,8 +71,8 @@ import com.github.mobile.ui.LightProgressDialog;
 import com.github.mobile.ui.TextWatcherAdapter;
 import com.github.mobile.util.ToastUtils;
 import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockAccountAuthenticatorActivity;
-import com.google.inject.Inject;
 
+import javax.inject.Inject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -84,10 +84,12 @@ import org.eclipse.egit.github.core.service.UserService;
 
 import roboguice.util.RoboAsyncTask;
 
+//TODO add SherlockAccountAuthenticatorActivity
+
 /**
  * Activity to login
  */
-public class LoginActivity extends RoboSherlockAccountAuthenticatorActivity {
+public class LoginActivity extends SherlockAccountAuthenticatorActivity {
 
     /**
      * Auth token type parameter

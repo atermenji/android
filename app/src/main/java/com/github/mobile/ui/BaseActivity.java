@@ -17,15 +17,16 @@ package com.github.mobile.ui;
 
 import android.os.Bundle;
 
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.github.kevinsawicki.wishlist.ViewFinder;
-import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmentActivity;
+import com.github.mobile.GitHubApplication;
 
 import java.io.Serializable;
 
 /**
  * Base sherlock activity
  */
-public class BaseActivity extends RoboSherlockFragmentActivity {
+public class BaseActivity extends SherlockFragmentActivity {
 
     /**
      * Finder bound to this activity's view
@@ -37,6 +38,8 @@ public class BaseActivity extends RoboSherlockFragmentActivity {
         super.onCreate(savedInstanceState);
 
         finder = new ViewFinder(this);
+
+        GitHubApplication.from(this).inject(this);
     }
 
     /**

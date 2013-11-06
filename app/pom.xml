@@ -34,27 +34,6 @@
       <type>apklib</type>
     </dependency>
     <dependency>
-      <groupId>com.github.rtyley</groupId>
-      <artifactId>roboguice-sherlock</artifactId>
-      <version>1.4</version>
-    </dependency>
-    <dependency>
-      <groupId>org.roboguice</groupId>
-      <artifactId>roboguice</artifactId>
-      <version>2.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.inject.extensions</groupId>
-      <artifactId>guice-assistedinject</artifactId>
-      <version>3.0</version>
-      <exclusions>
-        <exclusion>
-          <groupId>com.google.inject</groupId>
-          <artifactId>guice</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
       <groupId>com.squareup.dagger</groupId>
       <artifactId>dagger</artifactId>
       <version>1.1.0</version>

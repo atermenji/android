@@ -35,8 +35,8 @@ import com.github.kevinsawicki.http.HttpRequest;
 import com.github.kevinsawicki.http.HttpRequest.HttpRequestException;
 import com.github.mobile.R.drawable;
 import com.github.mobile.accounts.AuthenticatedUserTask;
-import com.google.inject.Inject;
 
+import javax.inject.Inject;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;

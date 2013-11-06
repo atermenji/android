@@ -23,13 +23,14 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import roboguice.fragment.RoboDialogFragment;
+
+import com.github.mobile.GitHubApplication;
 
 /**
  * Base dialog fragment helper
  */
-public abstract class DialogFragmentHelper extends RoboDialogFragment implements
-        OnClickListener {
+public abstract class DialogFragmentHelper extends android.support.v4.app.DialogFragment
+        implements OnClickListener {
 
     /**
      * Dialog message
@@ -120,6 +121,13 @@ public abstract class DialogFragmentHelper extends RoboDialogFragment implements
     @Override
     public void onCancel(DialogInterface dialog) {
         onResult(RESULT_CANCELED);
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        GitHubApplication.from(getActivity()).inject(this);
     }
 
     /**

@@ -16,9 +16,9 @@
 package com.github.mobile.accounts;
 
 import com.google.inject.Key;
-import com.google.inject.Provider;
-import com.google.inject.Scope;
 
+import javax.inject.Provider;
+import javax.inject.Scope;
 import java.util.Map;
 
 /**
